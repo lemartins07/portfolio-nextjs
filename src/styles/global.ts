@@ -61,20 +61,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 12vw;
   }
   
-  .home {
-    text-align: center;
-    gap: 2rem;
-  }
-  .home .image img {
-    height: 30rem;
-    width: 30rem;
-  }
-  .home .content h3 {
-    font-size: 3rem;
-  }
-  .home .content span {
-    font-size: 2.5rem;
-  }
   .contact .row form .inputBox input {
     width: 100%;
   }
