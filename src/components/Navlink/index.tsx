@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { NavlinkContainer } from "./styles";
+import Link from 'next/link'
+import { NavlinkContainer } from './styles'
 
 export function Navlink() {
   return (

@@ -1,7 +1,5 @@
-'use client';
+'use client'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const NavlinkContainer = styled.div`
-  
-`
+export const NavlinkContainer = styled.div``
