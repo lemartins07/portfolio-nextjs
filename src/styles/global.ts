@@ -18,7 +18,6 @@ export const GlobalStyles = createGlobalStyle`
     outline: none;
     border: none;
     text-transform: capitalize;
-    color: ${(props) => props.theme.white};
   }
 
   html {
@@ -31,20 +30,58 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html::-webkit-scrollbar-track {
-    background: #20232A;
+    background: ${(props) => props.theme['gray-400']};
   }
 
   html::-webkit-scrollbar-thumb {
-    background: #64DAFB;
+    background: ${(props) => props.theme['blue-500']};
     border-radius: 5rem;
   }
 
   html body {
-    background: #20232A;
+    background: ${(props) => props.theme['gray-400']};
     padding-bottom: 6.5rem;
   }
 
   html section {
     padding: 5rem 9%;
   }
+
+  @media (max-width: 1200px) {
+    html {
+      font-size: 55%;
+    }
+    section {
+      padding: 3rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+  .heading {
+    font-size: 12vw;
+  }
+  
+  .home {
+    text-align: center;
+    gap: 2rem;
+  }
+  .home .image img {
+    height: 30rem;
+    width: 30rem;
+  }
+  .home .content h3 {
+    font-size: 3rem;
+  }
+  .home .content span {
+    font-size: 2.5rem;
+  }
+  .contact .row form .inputBox input {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
 `

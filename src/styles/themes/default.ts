@@ -7,4 +7,4 @@ export const defaultTheme = {
   'gray-700': '#6D6D6D',
 
   'blue-500': '#64DAFB',
-}
+} as const
