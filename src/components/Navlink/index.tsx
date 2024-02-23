@@ -6,16 +6,16 @@ export function Navlink() {
   return (
     <NavlinkContainer>
       <Link href="/">
-        <FaHouse /> <span>Home</span>
+        <FaHouse size={24} /> <span>Home</span>
       </Link>
       <Link href="/about">
-        <FaUser /> <span>About</span>
+        <FaUser size={24} /> <span>About</span>
       </Link>
       <Link href="/portfolio">
-        <FaBriefcase /> <span>Portfolio</span>
+        <FaBriefcase size={24} /> <span>Portfolio</span>
       </Link>
       <Link href="/contact">
-        <FaAddressBook />
+        <FaAddressBook size={24} />
         <span>Contact</span>
       </Link>
     </NavlinkContainer>

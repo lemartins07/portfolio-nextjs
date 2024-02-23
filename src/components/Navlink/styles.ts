@@ -12,6 +12,10 @@ export const NavlinkContainer = styled.div`
   align-items: flex-end;
 
   & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     padding: 2rem;
     font-size: 2rem;
     background: ${(props) => props.theme['gray-500']};
@@ -39,6 +43,7 @@ export const NavlinkContainer = styled.div`
   @media (max-width: 768px) {
     & a svg {
       padding: 0;
+      font-size: 2.5rem;
     }
 
     & a span {

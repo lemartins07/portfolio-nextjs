@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
-  weight: ['400'],
+  weight: ['400', '700'],
   subsets: ['latin'],
 })
 
@@ -45,6 +45,10 @@ export const GlobalStyles = createGlobalStyle`
 
   html section {
     padding: 5rem 9%;
+  }
+
+  h1, h2, h3 {
+    font-weight: bold;
   }
 
   @media (max-width: 1200px) {

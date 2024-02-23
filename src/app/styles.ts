@@ -15,10 +15,8 @@ export const HomeContainer = styled.section`
   }
 `
 
-export const HomeContent = styled.section`
+export const HomeContent = styled.div`
   flex: 1 1 42rem;
-  justify-content: center;
-  align-items: center;
 
   h3 {
     color: ${(props) => props.theme.white};
