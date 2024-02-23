@@ -1,6 +1,6 @@
 import { HomeContainer, HomeContent, HomeImage } from './styles'
 import Image from 'next/image'
-import { Button } from '@/components/Button'
+// import { Button } from '@/components/Button'
 import prisma from '@/lib/prisma'
 
 export default async function Home() {
@@ -23,7 +23,7 @@ export default async function Home() {
           <h3>hi, i am {user?.name}</h3>
           <span>{user?.skill}</span>
           <p>{user?.bio}</p>
-          <Button href="/about" text="about me" icon="user" />
+          {/* <Button href="/about" text="about me" icon="user" /> */}
         </HomeContent>
       </HomeContainer>
     )
