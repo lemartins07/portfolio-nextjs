@@ -87,14 +87,10 @@ export const HomeContent = styled.div`
 
   @media (max-width: 768px) {
     h3 {
-      font-size: 5rem;
-    }
-    span {
       font-size: 3rem;
     }
-
-    p {
-      font-size: 2rem;
+    span {
+      font-size: 2%.5rem;
     }
 
     a {
