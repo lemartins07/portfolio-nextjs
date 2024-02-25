@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import {
-  BoxContent,
   PortfolioBox,
   PortfolioBoxContainer,
   PortfolioContainer,
@@ -12,6 +11,7 @@ import Image from 'next/image'
 interface Projects {
   id: string
   name: string
+  latestDeployments: [{ alias: string }]
 }
 
 export default function Page() {
@@ -24,14 +24,15 @@ export default function Page() {
         const response = await fetch('/api/projects')
         const data = await response.json()
 
-        console.log(data.projects)
+        console.log('DATA: ', data.projects)
         setProjects(data.projects) // Define os projetos no estado local
       } catch (error) {
         console.error('Erro ao buscar projetos:', error)
       }
     }
 
-    fetchProjects() // Chama a função para buscar os projetos
+    fetchProjects()
+    // Chama a função para buscar os projetos
   }, []) // Executa apenas uma vez, quando o componente é montado
 
   return (
@@ -45,19 +46,24 @@ export default function Page() {
           projects.map((project) => (
             <PortfolioBox key={project.id}>
               <Image
-                src="/img-1.jpg"
+                src={`/${project.name}.png`}
                 alt={project.name}
-                width={626}
-                height={469}
+                width={500}
+                height={480}
               />
-              <BoxContent>
+              <div>
                 <h3>{project.name}</h3>
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Velit incidunt assumenda voluptatem.
                 </p>
-                <a href="#">read more</a>
-              </BoxContent>
+                <a
+                  href={`https://${project.latestDeployments[0].alias[0]}`}
+                  target="_blank"
+                >
+                  Demo
+                </a>
+              </div>
             </PortfolioBox>
           ))}
       </PortfolioBoxContainer>

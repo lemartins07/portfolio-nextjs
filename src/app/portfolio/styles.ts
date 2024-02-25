@@ -15,44 +15,7 @@ export const PortfolioContainer = styled.section`
   }
 `
 
-export const BoxContent = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: $light-bg;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  transform: translateY(-100%);
-  transition: 0.2s linear;
-
-  h3 {
-    font-size: 2.5rem;
-    color: $white;
-    text-transform: uppercase;
-    font-weight: normal;
-  }
-
-  p {
-    padding: 1rem 0;
-    font-size: 1.4rem;
-    line-height: 2;
-    color: $light-color;
-  }
-
-  a {
-    font-size: 2rem;
-    color: $primary-color;
-
-    &:hover {
-      color: $white;
-    }
-  }
-`
+export const BoxContent = styled.div``
 
 export const PortfolioBoxContainer = styled.div`
   display: grid;
@@ -67,7 +30,7 @@ export const PortfolioBox = styled.div`
   position: relative;
 
   &:hover {
-    ${BoxContent.displayName} {
+    div {
       transform: translateY(0);
     }
   }
@@ -76,5 +39,44 @@ export const PortfolioBox = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: ${(props) => props.theme['gray-500']};
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transform: translateY(-100%);
+    transition: 0.2s linear;
+
+    h3 {
+      font-size: 2.5rem;
+      color: ${(props) => props.theme.white};
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    p {
+      padding: 1rem 0;
+      font-size: 1.4rem;
+      line-height: 2;
+      color: ${(props) => props.theme['gray-800']};
+    }
+
+    a {
+      font-size: 2rem;
+      color: ${(props) => props.theme['blue-500']};
+
+      &:hover {
+        color: ${(props) => props.theme.white};
+      }
+    }
   }
 `
