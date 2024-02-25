@@ -14,7 +14,7 @@ export default async function Home() {
         <HomeImage>
           <Image
             alt="Leandro Martins"
-            src="/leandro_portfolio.jpg"
+            src="/leandro_portfolio_.png"
             width={700}
             height={700}
           />

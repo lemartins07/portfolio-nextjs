@@ -15,12 +15,14 @@ export const PortfolioContainer = styled.section`
   }
 `
 
-export const BoxContent = styled.div``
-
 export const PortfolioBoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
+
+  @media (max-width: 700px) {
+    gap: 3rem;
+  }
 
   margin-bottom: 2rem;
 `
@@ -28,9 +30,15 @@ export const PortfolioBox = styled.div`
   height: 30rem;
   overflow: hidden;
   position: relative;
+  //  border: 1px solid ${(props) => props.theme['gray-100']};
+  box-shadow: ${(props) => props.theme['box-shadow']};
 
   &:hover {
-    div {
+    & {
+      transform: scale(1.07);
+      transition: 0.2s linear;
+    }
+    .box-content {
       transform: translateY(0);
     }
   }
@@ -41,7 +49,7 @@ export const PortfolioBox = styled.div`
     object-fit: cover;
   }
 
-  div {
+  .box-content {
     position: absolute;
     top: 0;
     left: 0;

@@ -6,7 +6,7 @@ import {
   PortfolioBoxContainer,
   PortfolioContainer,
 } from './styles'
-import Image from 'next/image'
+import ImageHelper from '@/components/ImageHelper'
 
 interface Projects {
   id: string
@@ -45,13 +45,13 @@ export default function Page() {
         {projects &&
           projects.map((project) => (
             <PortfolioBox key={project.id}>
-              <Image
+              <ImageHelper
                 src={`/${project.name}.png`}
                 alt={project.name}
                 width={500}
                 height={480}
               />
-              <div>
+              <div className="box-content">
                 <h3>{project.name}</h3>
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
