@@ -1,6 +1,11 @@
 'use client'
 
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { bounceIn, fadeIn, fadeInUp } from 'react-animations'
+
+const bounceAnimation = keyframes`${bounceIn}`
+const fadeInAnimation = keyframes`${fadeIn}`
+const fadeUpAnimation = keyframes`${fadeInUp}`
 
 export const HomeContainer = styled.section`
   display: flex;
@@ -22,6 +27,18 @@ export const HomeContent = styled.div`
     color: ${(props) => props.theme.white};
     font-size: 4rem;
     padding-bottom: 0.5rem;
+    opacity: 0;
+    animation: 2s ${bounceAnimation} forwards;
+    animation-delay: 2s;
+
+    @keyframes heroTitle {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   span {
@@ -36,14 +53,48 @@ export const HomeContent = styled.div`
     color: ${(props) => props.theme['gray-700']};
     padding: 1rem 0;
     line-height: 2;
+
+    opacity: 0;
+    animation: 2s ${fadeUpAnimation} forwards;
+    animation-delay: 5s;
+
+    @keyframes heroTitle {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  .typed-out {
+    overflow: hidden;
+    border-right: 0.15em solid ${(props) => props.theme['blue-500']};
+    white-space: nowrap;
+    animation: typing 2s steps(20, end) forwards;
+    animation-delay: 3s;
+    width: 0;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
     h3 {
-      font-size: 3rem;
+      font-size: 5rem;
     }
     span {
-      font-size: 2.5rem;
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 2rem;
     }
 
     a {
@@ -61,6 +112,7 @@ export const HomeImage = styled.div`
     height: 70%;
     width: 70%;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: 2s ${fadeInAnimation};
   }
 
   @media (max-width: 768px) {
