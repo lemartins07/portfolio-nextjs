@@ -10,9 +10,12 @@ import {
   InfoContainer,
   SkillContainer,
   SkillBox,
+  EducationContainer,
+  EducationBox,
 } from './styles'
 import { Button } from '@/components/Button'
 import Image from 'next/image'
+import { FaGraduationCap } from 'react-icons/fa6'
 
 export default function Page() {
   return (
@@ -105,6 +108,89 @@ export default function Page() {
           </SkillBox>
         </div>
       </SkillContainer>
+      <EducationContainer>
+        <Heading textBlue="my" textWhite="education" />
+        <div>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+          <EducationBox>
+            <i>
+              <FaGraduationCap size={18} />
+            </i>
+            <span>2015 - 2016</span>
+            <h3>front-end development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quibusdam accusamus ducimus, itaque sequi natus vero accusantium
+              dolorum, magni possimus perferendis incidunt veniam alias, amet
+              eum fugit rem ipsam quod repellat!
+            </p>
+          </EducationBox>
+        </div>
+      </EducationContainer>
     </>
   )
 }

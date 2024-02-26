@@ -103,3 +103,55 @@ export const SkillBox = styled.div`
     font-weight: normal;
   }
 `
+export const EducationContainer = styled.section`
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`
+
+export const EducationBox = styled.div`
+  flex: 1 1 40rem;
+  margin-left: 2rem;
+  padding-top: 0;
+  padding-left: 3.5rem;
+  padding-bottom: 3rem;
+  border-left: 0.1rem solid #6d6d6d;
+  position: relative;
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    background: #64dafb;
+    color: #ffffff;
+    position: absolute;
+    top: -1rem;
+    left: -2.5rem;
+  }
+
+  span {
+    font-size: 1.7rem;
+    color: #ffffff;
+    border-radius: 5rem;
+    padding: 0.5rem 1.5rem;
+    background: #282c34;
+  }
+
+  h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #ffffff;
+    padding-top: 3rem;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #6d6d6d;
+    line-height: 2;
+  }
+`
