@@ -18,6 +18,44 @@ export const HomeContainer = styled.section`
     text-align: center !important;
     gap: 2rem;
   }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bouncing {
+    from {
+      transform: translateY(-25px);
+    }
+  }
+`
+
+export const HomeImage = styled.div`
+  flex: 1 1 42rem;
+  text-align: center;
+
+  img {
+    height: 70%;
+    width: 70%;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    opacity: 0;
+    animation:
+      fade 2s forwards,
+      bouncing 2s infinite alternate;
+    animation-delay: 1s;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      height: 30rem;
+      width: 30rem;
+    }
+  }
 `
 
 export const HomeContent = styled.div`
@@ -29,16 +67,7 @@ export const HomeContent = styled.div`
     padding-bottom: 0.5rem;
     opacity: 0;
     animation: 2s ${bounceAnimation} forwards;
-    animation-delay: 2s;
-
-    @keyframes heroTitle {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+    animation-delay: 3s;
   }
 
   span {
@@ -56,32 +85,36 @@ export const HomeContent = styled.div`
 
     opacity: 0;
     animation: 2s ${fadeUpAnimation} forwards;
-    animation-delay: 5s;
-
-    @keyframes heroTitle {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+    animation-delay: 6s;
+  }
+  .wrapper {
+    display: grid;
+    @media (max-width: 768px) {
+      place-items: center;
     }
   }
-
   .typed-out {
-    overflow: hidden;
-    border-right: 0.15em solid ${(props) => props.theme['blue-500']};
+    width: 16ch;
+    opacity: 0;
+    animation:
+      fade 0.1s forwards,
+      typing 2s steps(22) forwards,
+      blink 0.5s step-end infinite alternate;
+    animation-delay: 4s;
     white-space: nowrap;
-    animation: typing 2s steps(20, end) forwards;
-    animation-delay: 3s;
-    width: 0;
+    overflow: hidden;
+    border-right: 3px solid;
   }
+
   @keyframes typing {
     from {
       width: 0;
     }
-    to {
-      width: 100%;
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
     }
   }
 
@@ -96,25 +129,6 @@ export const HomeContent = styled.div`
     a {
       margin-left: auto;
       margin-right: auto;
-    }
-  }
-`
-
-export const HomeImage = styled.div`
-  flex: 1 1 42rem;
-  text-align: center;
-
-  img {
-    height: 70%;
-    width: 70%;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: 2s ${fadeInAnimation};
-  }
-
-  @media (max-width: 768px) {
-    img {
-      height: 30rem;
-      width: 30rem;
     }
   }
 `

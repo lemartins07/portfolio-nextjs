@@ -21,7 +21,9 @@ export default async function Home() {
         </HomeImage>
         <HomeContent>
           <h3>hi, i am {user?.name}</h3>
-          <span className="typed-out">{user?.skill}</span>
+          <div className="wrapper">
+            <span className="typed-out">{user?.skill}</span>
+          </div>
           <p>{user?.bio}</p>
           {/* <Button href="/about" text="about me" icon="user" /> */}
         </HomeContent>
