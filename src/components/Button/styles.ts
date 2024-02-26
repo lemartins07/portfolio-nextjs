@@ -7,7 +7,7 @@ export const ButtonContainer = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 162px;
+  max-width: max-content;
   max-height: 54px;
   margin-top: 1rem;
   border-radius: 5rem;
