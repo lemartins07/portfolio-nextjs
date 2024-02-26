@@ -1,10 +1,9 @@
 'use client'
 
 import styled, { keyframes } from 'styled-components'
-import { bounceIn, fadeIn, fadeInUp } from 'react-animations'
+import { bounceIn, fadeInUp } from 'react-animations'
 
 const bounceAnimation = keyframes`${bounceIn}`
-const fadeInAnimation = keyframes`${fadeIn}`
 const fadeUpAnimation = keyframes`${fadeInUp}`
 
 export const HomeContainer = styled.section`
