@@ -7,6 +7,7 @@ import {
   PortfolioContainer,
 } from './styles'
 import ImageHelper from '@/components/ImageHelper'
+import { Heading } from '@/components/Heading'
 
 interface Projects {
   id: string
@@ -37,10 +38,7 @@ export default function Page() {
 
   return (
     <PortfolioContainer>
-      <h1 className="heading">
-        <span>my</span> portfolio
-      </h1>
-
+      <Heading textBlue="My" textWhite="Portfolio" />
       <PortfolioBoxContainer>
         {projects &&
           projects.map((project) => (

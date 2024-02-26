@@ -1,19 +1,6 @@
 import styled from 'styled-components'
 
-export const PortfolioContainer = styled.section`
-  .heading {
-    text-align: center;
-    font-size: 6vw;
-    color: ${(props) => props.theme.white};
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-
-    span {
-      text-transform: uppercase;
-      color: ${(props) => props.theme['blue-500']};
-    }
-  }
-`
+export const PortfolioContainer = styled.section``
 
 export const PortfolioBoxContainer = styled.div`
   display: grid;
