@@ -12,7 +12,7 @@ import { Heading } from '@/components/Heading'
 interface Projects {
   id: string
   name: string
-  latestDeployments: [{ alias: string }]
+  homepage: string
 }
 
 export default function Page() {
@@ -22,11 +22,11 @@ export default function Page() {
     // Ao montar o componente, faça a chamada para a API
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/api/projects')
+        const response = await fetch('/api/github')
         const data = await response.json()
 
-        console.log('DATA: ', data.projects)
-        setProjects(data.projects) // Define os projetos no estado local
+        console.log('DATA: ', data)
+        setProjects(data) // Define os projetos no estado local
       } catch (error) {
         console.error('Erro ao buscar projetos:', error)
       }
@@ -36,6 +36,12 @@ export default function Page() {
     // Chama a função para buscar os projetos
   }, []) // Executa apenas uma vez, quando o componente é montado
 
+  function formartUrl(url: string) {
+    const formattedUrl = url.includes('https://') ? url : 'https://' + url
+
+    return formattedUrl
+  }
+
   return (
     <PortfolioContainer>
       <Heading textBlue="My" textWhite="Portfolio" />
@@ -44,7 +50,7 @@ export default function Page() {
           projects.map((project) => (
             <PortfolioBox key={project.id}>
               <ImageHelper
-                src={`/${project.name}.png`}
+                src={`/${project.name.toLowerCase()}.png`}
                 alt={project.name}
                 width={500}
                 height={480}
@@ -55,10 +61,7 @@ export default function Page() {
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Velit incidunt assumenda voluptatem.
                 </p>
-                <a
-                  href={`https://${project.latestDeployments[0].alias[0]}`}
-                  target="_blank"
-                >
+                <a href={`${formartUrl(project.homepage)}`} target="_blank">
                   Demo
                 </a>
               </div>
