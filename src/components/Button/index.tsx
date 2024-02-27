@@ -2,14 +2,14 @@
 
 import { FaAddressBook, FaBriefcase, FaHouse, FaUser } from 'react-icons/fa6'
 import { ButtonContainer } from './styles'
+import { ButtonHTMLAttributes } from 'react'
 
-interface ButtonProps {
-  href: string
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string
-  icon: 'user' | 'house' | 'addressBook' | 'briefcase'
+  icon: 'user' | 'house' | 'addressBook' | 'briefcase' | undefined
 }
 
-export function Button({ href, text, icon }: ButtonProps) {
+export function Button({ text, icon, ...props }: ButtonProps) {
   let seletedIcon
 
   switch (icon) {
@@ -25,11 +25,14 @@ export function Button({ href, text, icon }: ButtonProps) {
     case 'house':
       seletedIcon = <FaHouse />
       break
+    default:
+      seletedIcon = ''
+      break
   }
   return (
-    <ButtonContainer href={href}>
+    <ButtonContainer {...props}>
       {text}
-      <i>{seletedIcon}</i>
+      {seletedIcon && <i>{seletedIcon}</i>}
     </ButtonContainer>
   )
 }

@@ -1,9 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import styled from 'styled-components'
 
-export const ButtonContainer = styled(Link)`
+export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,5 +36,10 @@ export const ButtonContainer = styled(Link)`
 
   &:hover i {
     margin-left: 2rem;
+  }
+
+  button {
+    padding: 1rem 3rem;
+    cursor: pointer;
   }
 `

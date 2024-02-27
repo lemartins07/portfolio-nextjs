@@ -2,11 +2,19 @@ import { HomeContainer, HomeContent, HomeImage } from './styles'
 import Image from 'next/image'
 // import { Button } from '@/components/Button'
 import prisma from '@/lib/prisma'
+import { useRouter } from 'next/navigation'
+import { Button } from '@/components/Button'
 
 export default async function Home() {
   const user = await prisma.user.findFirst({
     where: { name: 'Leandro Martins' },
   })
+
+  const router = useRouter()
+
+  function handleClick() {
+    router.push('/about')
+  }
 
   return (
     user && (
@@ -25,7 +33,7 @@ export default async function Home() {
             <span className="typed-out">{user?.skill}</span>
           </div>
           <p>{user?.bio}</p>
-          {/* <Button href="/about" text="about me" icon="user" /> */}
+          <Button onClick={handleClick} text="about me" icon="user" />
         </HomeContent>
       </HomeContainer>
     )
